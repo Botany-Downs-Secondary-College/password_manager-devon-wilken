@@ -40,4 +40,4 @@ while True:
             print("please enter a valid niumber (1 or 2)")
     except ValueError:
         print("please enter a valid number(1 or 2)")
-print("Thank you for using Password Manager")
+print("Thank you for using Password Manager ")
