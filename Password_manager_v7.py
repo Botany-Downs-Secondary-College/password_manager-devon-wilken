@@ -24,44 +24,50 @@ def check_password():
             print("Your password seems fine")
             break
     return(password)
+def add_to_list(x,y, z):
+    user_input.append([x, y, z])
 
 
 name = input("Hello, what is your name?")
-age = float(input("What is your age?"))
 while True:
+    age = float(input("What is your age?"))
     if age < 13:
         print("you do not qualify to make an account")
         print(" Thank you {} for using pasword manager".format(name))
         raise SystemExit
-
+    elif age <= 122:
+      print("age meets requirements")
+      break
     else:
-        while True:
-            try:
-                print("1) Log in to account")
-                print("2) Create an account")
-                mode_1 = float(input("Enter numbers 1 or 2 to chose a mode:"))
-            #create account
-                if mode_1 == 2:
-                    account = input("New account name:")
-                    account_password = check_password()
-                    add_account(account, account_password)
-                    break
-            #log in to account
-                elif mode_1 == 1:
-                    while tries > 0:
-                        account = input("What is your account username:")
-                        account_password = input("What is your password?")
-                        if accounts.get(account) == account_password:
-                            print("pasword and username match")
-                            break
-                        else:
-                            tries = tries - 1
-                            print("incorrect pasword or account username {} tries left".format(tries))
+      print("please input valid age")
+
+while True:
+    try:
+        print("1) Log in to account")
+        print("2) Create an account")
+        mode_1 = float(input("Enter numbers 1 or 2 to chose a mode:"))
+    #create account
+        if mode_1 == 2:
+            account = input("New account name:")
+            account_password = check_password()
+            add_account(account, account_password)
+            break
+    #log in to account
+        elif mode_1 == 1:
+            while tries > 0:
+                account = input("What is your account username:")
+                account_password = input("What is your password?")
+                if accounts.get(account) == account_password:
+                    print("pasword and username match")
                     break
                 else:
-                    print("please enter a valid niumber (1 or 2)")
-            except ValueError:
-                print("please enter a valid number(1 or 2)")
+                    tries = tries - 1
+                    print("incorrect pasword or account username {} tries left".format(tries))
+            break
+        else:
+            print("please enter a valid niumber (1 or 2)")
+    except ValueError:
+        print("please enter a valid number(1 or 2)")
 
     while True:
         print("-----Menu-----")
