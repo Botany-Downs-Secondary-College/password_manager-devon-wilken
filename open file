@@ -1,0 +1,12 @@
+with open("{}.txt".format(account), 'a') as file:
+                file.write("Website: {}".format(website))
+                file.write("\n")
+                file.write("Account username: {}".format(account_username))
+                file.write("\n")
+                file.write("Password: {}".format(password))
+                file.write("\n")
+                file.write("\n")
+print("| Website/app    | Username         | Password      |")
+            for item in fl:
+                print("|", item[0]," " * (13 - len(item[0])), "|", item[1]," " * (15 - len(item[1])), "|", item[2]," " * (12 - len(item[2])), "|")
+                time.sleep(2)
